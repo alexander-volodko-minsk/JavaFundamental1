@@ -5,16 +5,16 @@ import by_1.InputData;
 
 public class Task6 
 {
-	private int quantityOfNumbers;//количество чисел
+	private int quantityOfNumbers;//РєРѕР»РёС‡РµСЃС‚РІРѕ С‡РёСЃРµР»
 
-	//Конструктор класса, в котором передаем количество вводимых чисел
+	//РљРѕРЅСЃС‚СЂСѓРєС‚РѕСЂ РєР»Р°СЃСЃР°, РІ РєРѕС‚РѕСЂРѕРј РїРµСЂРµРґР°РµРј РєРѕР»РёС‡РµСЃС‚РІРѕ РІРІРѕРґРёРјС‹С… С‡РёСЃРµР»
 	public Task6 (int quantityOfNumbers)
 	{
 		this.quantityOfNumbers=quantityOfNumbers;
 	}
 	
 	
-	//Метод, считывающий массив String из клавиатуры
+	//РњРµС‚РѕРґ, СЃС‡РёС‚С‹РІР°СЋС‰РёР№ РјР°СЃСЃРёРІ String РёР· РєР»Р°РІРёР°С‚СѓСЂС‹
 	public String [] readArray(int quantity)
 	{
 		String [] arrayString=new String[quantity];
@@ -26,7 +26,7 @@ public class Task6
 	}
 
 	
-	//Метод, преобразующий String массив в Double
+	//РњРµС‚РѕРґ, РїСЂРµРѕР±СЂР°Р·СѓСЋС‰РёР№ String РјР°СЃСЃРёРІ РІ Double
 	public Double[] arrayToDouble (String[] arrayString) throws IncorrectNumberException
 	{
 		Double[] arrayToDouble = new Double [arrayString.length];
@@ -46,7 +46,7 @@ public class Task6
 	}
 	
 	
-	//Метод, находящий  минимальное число
+	//РњРµС‚РѕРґ, РЅР°С…РѕРґСЏС‰РёР№  РјРёРЅРёРјР°Р»СЊРЅРѕРµ С‡РёСЃР»Рѕ
 	public  Double minNumber (Double []numerals)
 	{
 		
@@ -62,7 +62,7 @@ public class Task6
 	}
 	
 	
-	//Метод, находящий  максимальное число
+	//РњРµС‚РѕРґ, РЅР°С…РѕРґСЏС‰РёР№  РјР°РєСЃРёРјР°Р»СЊРЅРѕРµ С‡РёСЃР»Рѕ
 	public  Double maxNumber (Double []numerals)
 	{
 			
@@ -81,23 +81,23 @@ public class Task6
 	public static void main(String[] args) 
 	{
 
-		//Результат
-		double minValue;//минимальнрое значение
-		double maxValue;//максимальное значение
-		double sumMaxMin;//максимальное значение
+		//Р РµР·СѓР»СЊС‚Р°С‚
+		double minValue;//РјРёРЅРёРјР°Р»СЊРЅСЂРѕРµ Р·РЅР°С‡РµРЅРёРµ
+		double maxValue;//РјР°РєСЃРёРјР°Р»СЊРЅРѕРµ Р·РЅР°С‡РµРЅРёРµ
+		double sumMaxMin;//РјР°РєСЃРёРјР°Р»СЊРЅРѕРµ Р·РЅР°С‡РµРЅРёРµ
 		
-		//Условие задания
+		//РЈСЃР»РѕРІРёРµ Р·Р°РґР°РЅРёСЏ
 		System.out.println("Input three numerals  \n"
 			+ "it'll show you min and max value \n");
 				
-		//Создание объекта класса
+		//РЎРѕР·РґР°РЅРёРµ РѕР±СЉРµРєС‚Р° РєР»Р°СЃСЃР°
 		Task6 Running = new Task6(3);
 		
-		//Выполнение программы
-		//String массив чисел
+		//Р’С‹РїРѕР»РЅРµРЅРёРµ РїСЂРѕРіСЂР°РјРјС‹
+		//String РјР°СЃСЃРёРІ С‡РёСЃРµР»
 		String numeralsString [] =Running.readArray(Running.quantityOfNumbers);
 		
-		//Double массив чисел
+		//Double РјР°СЃСЃРёРІ С‡РёСЃРµР»
 		Double numeralsDouble [] = new Double [Running.quantityOfNumbers];
 		try 
 		{
@@ -109,10 +109,10 @@ public class Task6
 			return;
 		}
 		
-		//Нахождение мин и макс значения
+		//РќР°С…РѕР¶РґРµРЅРёРµ РјРёРЅ Рё РјР°РєСЃ Р·РЅР°С‡РµРЅРёСЏ
 		minValue=Running.minNumber(numeralsDouble);
 		maxValue=Running.maxNumber(numeralsDouble);
-		//Вывод результата на экран
+		//Р’С‹РІРѕРґ СЂРµР·СѓР»СЊС‚Р°С‚Р° РЅР° СЌРєСЂР°РЅ
 		sumMaxMin=minValue+maxValue;
 		System.out.println("Sum of min and max values="+sumMaxMin);
 	}

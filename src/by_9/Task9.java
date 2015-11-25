@@ -6,7 +6,7 @@ import by_1.InputData;
 public class Task9 
 {
 	
-	//Метод проверяющий формат введенных значений и возвращающий int
+	//РњРµС‚РѕРґ РїСЂРѕРІРµСЂСЏСЋС‰РёР№ С„РѕСЂРјР°С‚ РІРІРµРґРµРЅРЅС‹С… Р·РЅР°С‡РµРЅРёР№ Рё РІРѕР·РІСЂР°С‰Р°СЋС‰РёР№ int
 	public  int validString (String someString) throws IncorrectNumberException
 	{
 		int stringToInt=0;
@@ -14,12 +14,12 @@ public class Task9
 		{
 			stringToInt=Integer.parseInt(someString);
 		}
-		//В случае неправильного формата вводимых данных выводим сообщение об ошибке
+		//Р’ СЃР»СѓС‡Р°Рµ РЅРµРїСЂР°РІРёР»СЊРЅРѕРіРѕ С„РѕСЂРјР°С‚Р° РІРІРѕРґРёРјС‹С… РґР°РЅРЅС‹С… РІС‹РІРѕРґРёРј СЃРѕРѕР±С‰РµРЅРёРµ РѕР± РѕС€РёР±РєРµ
 		catch (NumberFormatException e)
 		{
 			throw new IncorrectNumberException("Incorrect Format Of Numerals");
 		}
-		//Проверяем натуральное ли число
+		//РџСЂРѕРІРµСЂСЏРµРј РЅР°С‚СѓСЂР°Р»СЊРЅРѕРµ Р»Рё С‡РёСЃР»Рѕ
 		if(stringToInt<=0)
 		{
 			throw new IncorrectNumberException("Not a natural");
@@ -28,7 +28,7 @@ public class Task9
 	}
 		
 		
-	//Метод, считывающий массив String из клавиатуры
+	//РњРµС‚РѕРґ, СЃС‡РёС‚С‹РІР°СЋС‰РёР№ РјР°СЃСЃРёРІ String РёР· РєР»Р°РІРёР°С‚СѓСЂС‹
 	public String [] readArray(int quantity)
 	{
 		String [] arrayString=new String[quantity];
@@ -39,7 +39,7 @@ public class Task9
 		return arrayString;
 	}
 	
-	//Метод, преобразующий String массив в double
+	//РњРµС‚РѕРґ, РїСЂРµРѕР±СЂР°Р·СѓСЋС‰РёР№ String РјР°СЃСЃРёРІ РІ double
 	public double[] arrayToDouble (String[] arrayString) throws IncorrectNumberException
 	{
 		double[] arrayToDouble = new double [arrayString.length];
@@ -59,7 +59,7 @@ public class Task9
 	}
 	
 	
-	//Метод формирующий комбинацию
+	//РњРµС‚РѕРґ С„РѕСЂРјРёСЂСѓСЋС‰РёР№ РєРѕРјР±РёРЅР°С†РёСЋ
 	public double[] combination (double [] array1, double [] array2, int number ) throws IncorrectNumberException
 	{
 
@@ -87,10 +87,10 @@ public class Task9
 	}	
 	
 	
-	//Метод выводящий массив на экран
+	//РњРµС‚РѕРґ РІС‹РІРѕРґСЏС‰РёР№ РјР°СЃСЃРёРІ РЅР° СЌРєСЂР°РЅ
 	public  void showArray (double []arrayToShow)
 	{
-		//Печать числа
+		//РџРµС‡Р°С‚СЊ С‡РёСЃР»Р°
 		for(int i=0; i<arrayToShow.length; i++)
 		{
 			System.out.println(arrayToShow[i]);
@@ -101,8 +101,8 @@ public class Task9
 	
 	public static void main(String[] args) 
 	{
-		//Входные данные
-		//количество чисел
+		//Р’С…РѕРґРЅС‹Рµ РґР°РЅРЅС‹Рµ
+		//РєРѕР»РёС‡РµСЃС‚РІРѕ С‡РёСЃРµР»
 		String dimensionString1;
 		int dimensionDouble1=0;
 		
@@ -112,7 +112,7 @@ public class Task9
 		String numberToCombinateString;
 		int numberToCombinateInt=0;
 
-		//массив чисел
+		//РјР°СЃСЃРёРІ С‡РёСЃРµР»
 		String numbersString1 [] = new String [dimensionDouble1];
 		double numbersDouble1 [] = new double [dimensionDouble1];
 		
@@ -121,16 +121,16 @@ public class Task9
 		
 		double combinationArray [] = new double[dimensionDouble1+dimensionDouble2];
 
-		//Условие задания
+		//РЈСЃР»РѕРІРёРµ Р·Р°РґР°РЅРёСЏ
 		System.out.println("Input two arrays and element's number to combinate \n"
 			+ "it'll show you the arrays combination \n");
 
-		//Создание объекта класса
+		//РЎРѕР·РґР°РЅРёРµ РѕР±СЉРµРєС‚Р° РєР»Р°СЃСЃР°
 		Task9 Running = new Task9();
-		//Ввод данных
-		dimensionString1=InputData.readString("Input dimension of first array");//размерность1
-		dimensionString2=InputData.readString("Input dimension of second array");//размерность2
-		numberToCombinateString=InputData.readString("Input number to combinate");//номер
+		//Р’РІРѕРґ РґР°РЅРЅС‹С…
+		dimensionString1=InputData.readString("Input dimension of first array");//СЂР°Р·РјРµСЂРЅРѕСЃС‚СЊ1
+		dimensionString2=InputData.readString("Input dimension of second array");//СЂР°Р·РјРµСЂРЅРѕСЃС‚СЊ2
+		numberToCombinateString=InputData.readString("Input number to combinate");//РЅРѕРјРµСЂ
 		
 		try 
 		{
@@ -144,10 +144,10 @@ public class Task9
 			return;
 		}
 		System.out.println("Specify the first array");
-		numbersString1=Running.readArray(dimensionDouble1);//массив 1
+		numbersString1=Running.readArray(dimensionDouble1);//РјР°СЃСЃРёРІ 1
 		System.out.println("____________________");
 		System.out.println("Specify the second array");
-		numbersString2=Running.readArray(dimensionDouble2);//массив 2
+		numbersString2=Running.readArray(dimensionDouble2);//РјР°СЃСЃРёРІ 2
 		System.out.println("____________________");
 		try 
 		{
@@ -160,7 +160,7 @@ public class Task9
 			return;
 		}
 		
-		//Комбинация
+		//РљРѕРјР±РёРЅР°С†РёСЏ
 		try 
 		{
 			combinationArray=Running.combination(numbersDouble1, numbersDouble2, numberToCombinateInt);
@@ -170,7 +170,7 @@ public class Task9
 			System.out.println(e.getMessage());
 			return;
 		}
-		//Вывод на экран
+		//Р’С‹РІРѕРґ РЅР° СЌРєСЂР°РЅ
 		System.out.println("The combinations of arrays");
 		System.out.println("____________________");
 		Running.showArray(combinationArray);

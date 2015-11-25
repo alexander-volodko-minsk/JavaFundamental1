@@ -6,11 +6,11 @@ import by_1.InputData;
 public class Task5 
 {
 	
-	private int quantityOfNumbers;//количество чисел
-	private int powAboveZero;//степень возведения неотрицательных
-	private int powSubZero;//степень возведения отрицательных
+	private int quantityOfNumbers;//РєРѕР»РёС‡РµСЃС‚РІРѕ С‡РёСЃРµР»
+	private int powAboveZero;//СЃС‚РµРїРµРЅСЊ РІРѕР·РІРµРґРµРЅРёСЏ РЅРµРѕС‚СЂРёС†Р°С‚РµР»СЊРЅС‹С…
+	private int powSubZero;//СЃС‚РµРїРµРЅСЊ РІРѕР·РІРµРґРµРЅРёСЏ РѕС‚СЂРёС†Р°С‚РµР»СЊРЅС‹С…
 	
-	//Конструктор класса, в котором передаем количество вводимых чисел и требуемые степени
+	//РљРѕРЅСЃС‚СЂСѓРєС‚РѕСЂ РєР»Р°СЃСЃР°, РІ РєРѕС‚РѕСЂРѕРј РїРµСЂРµРґР°РµРј РєРѕР»РёС‡РµСЃС‚РІРѕ РІРІРѕРґРёРјС‹С… С‡РёСЃРµР» Рё С‚СЂРµР±СѓРµРјС‹Рµ СЃС‚РµРїРµРЅРё
 	public Task5 (int quantityOfNumbers, int powAboveZero, int powSubZero)
 	{
 		this.quantityOfNumbers=quantityOfNumbers;
@@ -19,7 +19,7 @@ public class Task5
 	}
 
 	
-	//Метод, проверяющий формат введенных значений и приводящий String к double
+	//РњРµС‚РѕРґ, РїСЂРѕРІРµСЂСЏСЋС‰РёР№ С„РѕСЂРјР°С‚ РІРІРµРґРµРЅРЅС‹С… Р·РЅР°С‡РµРЅРёР№ Рё РїСЂРёРІРѕРґСЏС‰РёР№ String Рє double
 	public  double validString (String someString) throws IncorrectNumberException
 	{
 		double stringToDouble=0;
@@ -27,7 +27,7 @@ public class Task5
 		{
 			stringToDouble=Double.parseDouble(someString);
 		}
-		//В случае неправильного формата вводимых данных выводим сообщение об ошибке
+		//Р’ СЃР»СѓС‡Р°Рµ РЅРµРїСЂР°РІРёР»СЊРЅРѕРіРѕ С„РѕСЂРјР°С‚Р° РІРІРѕРґРёРјС‹С… РґР°РЅРЅС‹С… РІС‹РІРѕРґРёРј СЃРѕРѕР±С‰РµРЅРёРµ РѕР± РѕС€РёР±РєРµ
 		catch (NumberFormatException e)
 		{
 			throw new IncorrectNumberException("Incorrect Format Of Numerals");
@@ -36,7 +36,7 @@ public class Task5
 	}
 	
 	
-	//Метод, возводящий в степень
+	//РњРµС‚РѕРґ, РІРѕР·РІРѕРґСЏС‰РёР№ РІ СЃС‚РµРїРµРЅСЊ
 	public  double powNumber (double number , int powSubZero, int powAboveZero)
 	{
 		double powNumber;
@@ -52,10 +52,10 @@ public class Task5
 		return powNumber;
 	}
 	
-	//Метод, выводящий массив на экран
+	//РњРµС‚РѕРґ, РІС‹РІРѕРґСЏС‰РёР№ РјР°СЃСЃРёРІ РЅР° СЌРєСЂР°РЅ
 	public void showArray (double[] someString, String message)
 	{
-		//Вывод на экран
+		//Р’С‹РІРѕРґ РЅР° СЌРєСЂР°РЅ
 		for(int i=0; i<someString.length; i++)
 		{
 			System.out.println((i+1)+message+someString[i]);
@@ -65,25 +65,25 @@ public class Task5
 
 	public static void main(String[] args) 
 	{
-		//Входные данные
+		//Р’С…РѕРґРЅС‹Рµ РґР°РЅРЅС‹Рµ
 		String message=" number in pow = ";
 		
-		//Условие задания
+		//РЈСЃР»РѕРІРёРµ Р·Р°РґР°РЅРёСЏ
 		System.out.println("Input three numerals  \n"
 			+ "it'll show you it's pows \n");
 		
 				
-		//Создание объекта класса
+		//РЎРѕР·РґР°РЅРёРµ РѕР±СЉРµРєС‚Р° РєР»Р°СЃСЃР°
 		Task5 Running = new Task5(3,2,4);
-		//Массив чисел в степенях чисел
+		//РњР°СЃСЃРёРІ С‡РёСЃРµР» РІ СЃС‚РµРїРµРЅСЏС… С‡РёСЃРµР»
 		double[] numbersInPows = new double[Running.quantityOfNumbers]; 
-		//Выполнение программы
+		//Р’С‹РїРѕР»РЅРµРЅРёРµ РїСЂРѕРіСЂР°РјРјС‹
 		for(int i=0; i<Running.quantityOfNumbers; i++)
 		{
-			//Считывание числа
+			//РЎС‡РёС‚С‹РІР°РЅРёРµ С‡РёСЃР»Р°
 			String numberString=InputData.readString("Input "+(i+1)+" number");
 			
-			//Перевод String в double
+			//РџРµСЂРµРІРѕРґ String РІ double
 			double numberDouble;
 			try
 			{
@@ -95,11 +95,11 @@ public class Task5
 				return;
 			}
 			
-			//Возведение чисел в степень и вывод на экран
+			//Р’РѕР·РІРµРґРµРЅРёРµ С‡РёСЃРµР» РІ СЃС‚РµРїРµРЅСЊ Рё РІС‹РІРѕРґ РЅР° СЌРєСЂР°РЅ
 			double powOfNumber=Running.powNumber(numberDouble, Running.powSubZero, Running.powAboveZero);
 			numbersInPows[i]=powOfNumber;
 		}
-		//Вывод массива на экран
+		//Р’С‹РІРѕРґ РјР°СЃСЃРёРІР° РЅР° СЌРєСЂР°РЅ
 		Running.showArray(numbersInPows,message);
 		
 	}

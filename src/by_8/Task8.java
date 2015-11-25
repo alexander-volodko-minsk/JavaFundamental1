@@ -6,7 +6,7 @@ import by_1.InputData;
 public class Task8
 {
 
-	//Метод проверяющий формат введенных значений и возвращающий int
+	//РњРµС‚РѕРґ РїСЂРѕРІРµСЂСЏСЋС‰РёР№ С„РѕСЂРјР°С‚ РІРІРµРґРµРЅРЅС‹С… Р·РЅР°С‡РµРЅРёР№ Рё РІРѕР·РІСЂР°С‰Р°СЋС‰РёР№ int
 	public  int validString (String someString) throws IncorrectNumberException
 	{
 		int stringToInt=0;
@@ -14,12 +14,12 @@ public class Task8
 		{
 			stringToInt=Integer.parseInt(someString);
 		}
-		//В случае неправильного формата вводимых данных выводим сообщение об ошибке
+		//Р’ СЃР»СѓС‡Р°Рµ РЅРµРїСЂР°РІРёР»СЊРЅРѕРіРѕ С„РѕСЂРјР°С‚Р° РІРІРѕРґРёРјС‹С… РґР°РЅРЅС‹С… РІС‹РІРѕРґРёРј СЃРѕРѕР±С‰РµРЅРёРµ РѕР± РѕС€РёР±РєРµ
 		catch (NumberFormatException e)
 		{
 			throw new IncorrectNumberException("Incorrect Format Of Numerals");
 		}
-		//Проверяем натуральное ли число
+		//РџСЂРѕРІРµСЂСЏРµРј РЅР°С‚СѓСЂР°Р»СЊРЅРѕРµ Р»Рё С‡РёСЃР»Рѕ
 		if(stringToInt<=0)
 		{
 			throw new IncorrectNumberException("Not a natural");
@@ -27,7 +27,7 @@ public class Task8
 		return stringToInt;
 	}
 		
-	//Метод, считывающий массив String из клавиатуры
+	//РњРµС‚РѕРґ, СЃС‡РёС‚С‹РІР°СЋС‰РёР№ РјР°СЃСЃРёРІ String РёР· РєР»Р°РІРёР°С‚СѓСЂС‹
 	public String [] readArray(int quantity)
 	{
 		String [] arrayString=new String[quantity];
@@ -38,7 +38,7 @@ public class Task8
 		return arrayString;
 	}
 	
-	//Метод, преобразующий String массив в Int
+	//РњРµС‚РѕРґ, РїСЂРµРѕР±СЂР°Р·СѓСЋС‰РёР№ String РјР°СЃСЃРёРІ РІ Int
 	public int[] arrayToInt (String[] arrayString) throws IncorrectNumberException
 	{
 		int[] arrayToDouble = new int [arrayString.length];
@@ -58,10 +58,10 @@ public class Task8
 	}
 	
 	
-	//Метод подсчитывающий сумму кратных элементов
+	//РњРµС‚РѕРґ РїРѕРґСЃС‡РёС‚С‹РІР°СЋС‰РёР№ СЃСѓРјРјСѓ РєСЂР°С‚РЅС‹С… СЌР»РµРјРµРЅС‚РѕРІ
 	public int counter (int [] arrayToCount, int multiplicity ) throws IncorrectNumberException
 	{
-		//Проверка валидности значения кратности
+		//РџСЂРѕРІРµСЂРєР° РІР°Р»РёРґРЅРѕСЃС‚Рё Р·РЅР°С‡РµРЅРёСЏ РєСЂР°С‚РЅРѕСЃС‚Рё
 		if(multiplicity==0)
 		{
 			throw new IncorrectNumberException("Incorrect multiplicity");
@@ -69,7 +69,7 @@ public class Task8
 		int condition=0;
 		int sum=0;
 		
-		//Проверка кратности
+		//РџСЂРѕРІРµСЂРєР° РєСЂР°С‚РЅРѕСЃС‚Рё
 		for(int i=0; i<arrayToCount.length; i++)
 		{
 			
@@ -84,28 +84,28 @@ public class Task8
 	
 	public static void main(String[] args) 
 	{
-		//Входные данные
-		//количество чисел
+		//Р’С…РѕРґРЅС‹Рµ РґР°РЅРЅС‹Рµ
+		//РєРѕР»РёС‡РµСЃС‚РІРѕ С‡РёСЃРµР»
 		String dimensionString;
 		int dimensionInt=0;
 		int sumOfElements;
-		//кратность
+		//РєСЂР°С‚РЅРѕСЃС‚СЊ
 		String multiplicityString;
 		int multiplicityInt=0;
 		
-		//массив чисел
+		//РјР°СЃСЃРёРІ С‡РёСЃРµР»
 		String numbersString [] = new String [dimensionInt];
 		int numbersInt [] = new int [dimensionInt];
 
-		//Условие задания
+		//РЈСЃР»РѕРІРёРµ Р·Р°РґР°РЅРёСЏ
 		System.out.println("Input dimension, multiplicity and numbers of array   \n"
 			+ "it'll show you the sum \n");
 
-		//Создание объекта класса
+		//РЎРѕР·РґР°РЅРёРµ РѕР±СЉРµРєС‚Р° РєР»Р°СЃСЃР°
 		Task8 Running = new Task8();
-		//Ввод данных
-		dimensionString=InputData.readString("Input dimension");//размерность
-		multiplicityString=InputData.readString("Input multiplicity");//кратность
+		//Р’РІРѕРґ РґР°РЅРЅС‹С…
+		dimensionString=InputData.readString("Input dimension");//СЂР°Р·РјРµСЂРЅРѕСЃС‚СЊ
+		multiplicityString=InputData.readString("Input multiplicity");//РєСЂР°С‚РЅРѕСЃС‚СЊ
 		try 
 		{
 			dimensionInt=Running.validString(dimensionString);
@@ -117,11 +117,11 @@ public class Task8
 			return;
 		}
 		
-		//Ввод массива из клавиатуры
-		numbersString=Running.readArray(dimensionInt);//массив
+		//Р’РІРѕРґ РјР°СЃСЃРёРІР° РёР· РєР»Р°РІРёР°С‚СѓСЂС‹
+		numbersString=Running.readArray(dimensionInt);//РјР°СЃСЃРёРІ
 		try 
 		{
-			numbersInt=Running.arrayToInt(numbersString);//int массив
+			numbersInt=Running.arrayToInt(numbersString);//int РјР°СЃСЃРёРІ
 		} 
 		catch (IncorrectNumberException e) 
 		{
@@ -129,7 +129,7 @@ public class Task8
 			return;
 		}
 		
-		//Подсчет суммы
+		//РџРѕРґСЃС‡РµС‚ СЃСѓРјРјС‹
 		try 
 		{
 			sumOfElements=Running.counter(numbersInt, multiplicityInt);
@@ -139,7 +139,7 @@ public class Task8
 			System.out.println(e.getMessage());
 			return;
 		}
-		//Вывод результата на экран
+		//Р’С‹РІРѕРґ СЂРµР·СѓР»СЊС‚Р°С‚Р° РЅР° СЌРєСЂР°РЅ
 		System.out.println("The sum of multiplicityInt elements = "+sumOfElements);
 	}
 }

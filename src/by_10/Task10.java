@@ -5,36 +5,36 @@ import by_1.InputData;
 
 public class Task10 
 {
-	//Размер матрицы n
+	//Р Р°Р·РјРµСЂ РјР°С‚СЂРёС†С‹ n
 	private String n;
-	 //Конструктор класса, передаем параметр n
+	 //РљРѕРЅСЃС‚СЂСѓРєС‚РѕСЂ РєР»Р°СЃСЃР°, РїРµСЂРµРґР°РµРј РїР°СЂР°РјРµС‚СЂ n
 	public Task10(String n)
 	{
 		this.n=n;
 	}
 	
-	//Метод проверяющий формат введенного значения и возвращающий int
+	//РњРµС‚РѕРґ РїСЂРѕРІРµСЂСЏСЋС‰РёР№ С„РѕСЂРјР°С‚ РІРІРµРґРµРЅРЅРѕРіРѕ Р·РЅР°С‡РµРЅРёСЏ Рё РІРѕР·РІСЂР°С‰Р°СЋС‰РёР№ int
 	public  int validString (String someString) throws IncorrectNumberException
 	{
-		int evenNumeral=2;//делитель
-		int condition=0;//условие четности
+		int evenNumeral=2;//РґРµР»РёС‚РµР»СЊ
+		int condition=0;//СѓСЃР»РѕРІРёРµ С‡РµС‚РЅРѕСЃС‚Рё
 		
 		int stringToInt=0;
 		try 
 		{
 			stringToInt=Integer.parseInt(someString);
 		}
-		//В случае неправильного формата вводимых данных выводим сообщение об ошибке
+		//Р’ СЃР»СѓС‡Р°Рµ РЅРµРїСЂР°РІРёР»СЊРЅРѕРіРѕ С„РѕСЂРјР°С‚Р° РІРІРѕРґРёРјС‹С… РґР°РЅРЅС‹С… РІС‹РІРѕРґРёРј СЃРѕРѕР±С‰РµРЅРёРµ РѕР± РѕС€РёР±РєРµ
 		catch (NumberFormatException e)
 		{
 			throw new IncorrectNumberException("Incorrect Format Of Numerals");
 		}
-		//Проверяем натуральное ли число
+		//РџСЂРѕРІРµСЂСЏРµРј РЅР°С‚СѓСЂР°Р»СЊРЅРѕРµ Р»Рё С‡РёСЃР»Рѕ
 		if(stringToInt<=0)
 		{
 			throw new IncorrectNumberException("Not a natural");
 		}
-		//Проверяем четное ли число
+		//РџСЂРѕРІРµСЂСЏРµРј С‡РµС‚РЅРѕРµ Р»Рё С‡РёСЃР»Рѕ
 		if(stringToInt%evenNumeral!=condition)
 		{
 			throw new IncorrectNumberException("Not an even numeral");
@@ -42,18 +42,18 @@ public class Task10
 		return stringToInt;
 	}
 	
-	//Метод формирующий матрицу заданного образца
+	//РњРµС‚РѕРґ С„РѕСЂРјРёСЂСѓСЋС‰РёР№ РјР°С‚СЂРёС†Сѓ Р·Р°РґР°РЅРЅРѕРіРѕ РѕР±СЂР°Р·С†Р°
 	public int[][] formingMatrix(int verticalSize, int horizontalSize)
 	{
 		
 		int[][] matrix = new int[verticalSize][horizontalSize];
 		
-        // Цикл по первой размерности (первые квадратные скобки)
+        // Р¦РёРєР» РїРѕ РїРµСЂРІРѕР№ СЂР°Р·РјРµСЂРЅРѕСЃС‚Рё (РїРµСЂРІС‹Рµ РєРІР°РґСЂР°С‚РЅС‹Рµ СЃРєРѕР±РєРё)
         for (int i = 0; i < verticalSize; i++)
         {
-        	if(i%2!=0)//нечетность
+        	if(i%2!=0)//РЅРµС‡РµС‚РЅРѕСЃС‚СЊ
         	{
-        		// Цикл по второй размерности (вторые квадратные скобки)
+        		// Р¦РёРєР» РїРѕ РІС‚РѕСЂРѕР№ СЂР°Р·РјРµСЂРЅРѕСЃС‚Рё (РІС‚РѕСЂС‹Рµ РєРІР°РґСЂР°С‚РЅС‹Рµ СЃРєРѕР±РєРё)
                 for (int j = 0; j < horizontalSize; j++)
                 {
                 	matrix[i][j] = horizontalSize-j;
@@ -61,7 +61,7 @@ public class Task10
         	}
         	else
         	{
-        		// Цикл по второй размерности (вторые квадратные скобки)
+        		// Р¦РёРєР» РїРѕ РІС‚РѕСЂРѕР№ СЂР°Р·РјРµСЂРЅРѕСЃС‚Рё (РІС‚РѕСЂС‹Рµ РєРІР°РґСЂР°С‚РЅС‹Рµ СЃРєРѕР±РєРё)
                 for (int j = horizontalSize-1; j > (0-1); j--)
                 {
                 	matrix[i][j] = j+1;
@@ -71,13 +71,13 @@ public class Task10
 		return matrix;
 	}
 	
-	//Метод, выводящий матрицу на экран
+	//РњРµС‚РѕРґ, РІС‹РІРѕРґСЏС‰РёР№ РјР°С‚СЂРёС†Сѓ РЅР° СЌРєСЂР°РЅ
 	public void showMatrix(int[][] matrixToShow, int verticalSize, int horizontalSize )
 	{
-        // Цикл по первой размерности (первые квадратные скобки)
+        // Р¦РёРєР» РїРѕ РїРµСЂРІРѕР№ СЂР°Р·РјРµСЂРЅРѕСЃС‚Рё (РїРµСЂРІС‹Рµ РєРІР°РґСЂР°С‚РЅС‹Рµ СЃРєРѕР±РєРё)
         for (int i = 0; i < verticalSize; i++)
         {
-        	// Цикл по второй размерности (вторые квадратные скобки)
+        	// Р¦РёРєР» РїРѕ РІС‚РѕСЂРѕР№ СЂР°Р·РјРµСЂРЅРѕСЃС‚Рё (РІС‚РѕСЂС‹Рµ РєРІР°РґСЂР°С‚РЅС‹Рµ СЃРєРѕР±РєРё)
             for (int j = 0; j < horizontalSize; j++)
             {
             	if(j==horizontalSize-1)
@@ -96,19 +96,19 @@ public class Task10
 	public static void main(String[] args) 
 	{
 
-		//Результат
-		String dimensionString;//размер
-		int dimensionInt=0;//размер
+		//Р РµР·СѓР»СЊС‚Р°С‚
+		String dimensionString;//СЂР°Р·РјРµСЂ
+		int dimensionInt=0;//СЂР°Р·РјРµСЂ
 		int [][] matrix = new int [dimensionInt][dimensionInt];
 
-		//Условие задания
+		//РЈСЃР»РѕРІРёРµ Р·Р°РґР°РЅРёСЏ
 		System.out.println("Input dimension of the square matrix  \n"
 			+ "it'll show you the matrix \n");
 
-		//Считывание числа
+		//РЎС‡РёС‚С‹РІР°РЅРёРµ С‡РёСЃР»Р°
 		dimensionString=InputData.readString("Input dimension");
 		
-		//Создание объекта класса
+		//РЎРѕР·РґР°РЅРёРµ РѕР±СЉРµРєС‚Р° РєР»Р°СЃСЃР°
 		Task10 Running = new Task10(dimensionString);
 		
 		try

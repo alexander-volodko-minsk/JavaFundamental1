@@ -5,17 +5,17 @@ import by_1.InputData;
 
 public class Task3 
 {
-	private String cathetusA;//катет а
-	private String cathetusB;//катет b
+	private String cathetusA;//РєР°С‚РµС‚ Р°
+	private String cathetusB;//РєР°С‚РµС‚ b
 	
-	//Конструктор класса, в котором передаем катеты
+	//РљРѕРЅСЃС‚СЂСѓРєС‚РѕСЂ РєР»Р°СЃСЃР°, РІ РєРѕС‚РѕСЂРѕРј РїРµСЂРµРґР°РµРј РєР°С‚РµС‚С‹
 	public Task3 (String cathetusA, String cathetusB)
 	{
 		this.cathetusA=cathetusA;
 		this.cathetusB=cathetusB;
 	}	
 	
-	//Метод, проверяющий формат введенных значений и приводящий String к double
+	//РњРµС‚РѕРґ, РїСЂРѕРІРµСЂСЏСЋС‰РёР№ С„РѕСЂРјР°С‚ РІРІРµРґРµРЅРЅС‹С… Р·РЅР°С‡РµРЅРёР№ Рё РїСЂРёРІРѕРґСЏС‰РёР№ String Рє double
 	public  double validString (String someString) throws IncorrectNumberException
 	{
 		double stringToDouble=0;
@@ -23,7 +23,7 @@ public class Task3
 		{
 			stringToDouble=Double.parseDouble(someString);
 		}
-		//В случае неправильного формата вводимых данных выводим сообщение об ошибке
+		//Р’ СЃР»СѓС‡Р°Рµ РЅРµРїСЂР°РІРёР»СЊРЅРѕРіРѕ С„РѕСЂРјР°С‚Р° РІРІРѕРґРёРјС‹С… РґР°РЅРЅС‹С… РІС‹РІРѕРґРёРј СЃРѕРѕР±С‰РµРЅРёРµ РѕР± РѕС€РёР±РєРµ
 		catch (NumberFormatException e)
 		{
 			throw new IncorrectNumberException("Incorrect Format Of Numerals");
@@ -32,24 +32,24 @@ public class Task3
 	}
 	
 	
-	//Метод, вычисляющий площадь треугольника
+	//РњРµС‚РѕРґ, РІС‹С‡РёСЃР»СЏСЋС‰РёР№ РїР»РѕС‰Р°РґСЊ С‚СЂРµСѓРіРѕР»СЊРЅРёРєР°
 	public  double countTriangleSquare (double a, double b)
 	{
-		//Данные
+		//Р”Р°РЅРЅС‹Рµ
 		double square;
 		
-		//Вычисление результата по заданной формуле
+		//Р’С‹С‡РёСЃР»РµРЅРёРµ СЂРµР·СѓР»СЊС‚Р°С‚Р° РїРѕ Р·Р°РґР°РЅРЅРѕР№ С„РѕСЂРјСѓР»Рµ
 	    square = (a*b)/2;
 		return square;
 	}
 	
-	//Метод, вычисляющий периметр треугольника
+	//РњРµС‚РѕРґ, РІС‹С‡РёСЃР»СЏСЋС‰РёР№ РїРµСЂРёРјРµС‚СЂ С‚СЂРµСѓРіРѕР»СЊРЅРёРєР°
 	public  double countTrianglePerimeter (double a, double b)
 	{
-		//Данные
+		//Р”Р°РЅРЅС‹Рµ
 		double perimeter, hypotenuse;
 		
-		//Вычисление гипотенузы
+		//Р’С‹С‡РёСЃР»РµРЅРёРµ РіРёРїРѕС‚РµРЅСѓР·С‹
 		try 
 		{
 		hypotenuse = Math.sqrt(Math.pow(a, 2)+(Math.pow(b, 2)));
@@ -63,7 +63,7 @@ public class Task3
 			throw new NumberFormatException();
 		}
 
-		//Вычисление периметра 
+		//Р’С‹С‡РёСЃР»РµРЅРёРµ РїРµСЂРёРјРµС‚СЂР° 
 	    perimeter = a+b+hypotenuse;
 		return perimeter;
 	}
@@ -71,26 +71,26 @@ public class Task3
 
 	public static void main(String[] args) 
 	{
-		//Входные данные
+		//Р’С…РѕРґРЅС‹Рµ РґР°РЅРЅС‹Рµ
 		String aString;
 		double aDouble;
 		
 		String bString;
 		double bDouble;
 		
-		//Результат
+		//Р РµР·СѓР»СЊС‚Р°С‚
 		double triangleSquare, trianglePerimeter;
 		
-		//Условие задания
+		//РЈСЃР»РѕРІРёРµ Р·Р°РґР°РЅРёСЏ
 		System.out.println("Input two sides of triangle \n"
 			+ "it'll show you it's square \n");
 		
 		aString=InputData.readString("Input a");
 		bString=InputData.readString("Input b");
-		//Создание объекта класса
+		//РЎРѕР·РґР°РЅРёРµ РѕР±СЉРµРєС‚Р° РєР»Р°СЃСЃР°
 		Task3 Running = new Task3(aString,bString);
 		
-		//Выполнение программы
+		//Р’С‹РїРѕР»РЅРµРЅРёРµ РїСЂРѕРіСЂР°РјРјС‹
 		try
 		{
 			aDouble=Running.validString(Running.cathetusA);
@@ -102,7 +102,7 @@ public class Task3
 			return;
 		}
 
-		//Вычисление площади и периметра треугольника и вывод на экран
+		//Р’С‹С‡РёСЃР»РµРЅРёРµ РїР»РѕС‰Р°РґРё Рё РїРµСЂРёРјРµС‚СЂР° С‚СЂРµСѓРіРѕР»СЊРЅРёРєР° Рё РІС‹РІРѕРґ РЅР° СЌРєСЂР°РЅ
 		triangleSquare=Running.countTriangleSquare(aDouble, bDouble);
 		trianglePerimeter=Running.countTrianglePerimeter(aDouble, bDouble);
 		System.out.println(triangleSquare+"-the square of triangle");

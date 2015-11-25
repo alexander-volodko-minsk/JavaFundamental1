@@ -5,7 +5,7 @@ import by_1.InputData;
 
 public class Task2 
 {
-	//Метод, проверяющий формат введенных значений и приводящий String к double
+	//РњРµС‚РѕРґ, РїСЂРѕРІРµСЂСЏСЋС‰РёР№ С„РѕСЂРјР°С‚ РІРІРµРґРµРЅРЅС‹С… Р·РЅР°С‡РµРЅРёР№ Рё РїСЂРёРІРѕРґСЏС‰РёР№ String Рє double
 	public  double validString (String someString) throws IncorrectNumberException
 	{
 		double stringToDouble=0;
@@ -13,7 +13,7 @@ public class Task2
 		{
 			stringToDouble=Double.parseDouble(someString);
 		}
-		//В случае неправильного формата вводимых данных выводим сообщение об ошибке
+		//Р’ СЃР»СѓС‡Р°Рµ РЅРµРїСЂР°РІРёР»СЊРЅРѕРіРѕ С„РѕСЂРјР°С‚Р° РІРІРѕРґРёРјС‹С… РґР°РЅРЅС‹С… РІС‹РІРѕРґРёРј СЃРѕРѕР±С‰РµРЅРёРµ РѕР± РѕС€РёР±РєРµ
 		catch (NumberFormatException e)
 		{
 			throw new IncorrectNumberException("Incorrect Format Of Numerals");
@@ -21,16 +21,16 @@ public class Task2
 		return stringToDouble;
 	}
 	
-	//Метод, вычисляющий результат выражения
+	//РњРµС‚РѕРґ, РІС‹С‡РёСЃР»СЏСЋС‰РёР№ СЂРµР·СѓР»СЊС‚Р°С‚ РІС‹СЂР°Р¶РµРЅРёСЏ
 	public  double countExpression (double a, double b, double c)
 	{
 		double result=0;
-		//Вычисление результата по заданной формуле
+		//Р’С‹С‡РёСЃР»РµРЅРёРµ СЂРµР·СѓР»СЊС‚Р°С‚Р° РїРѕ Р·Р°РґР°РЅРЅРѕР№ С„РѕСЂРјСѓР»Рµ
 		try 
 		{
 		    result = (b + Math.sqrt(Math.pow(b,2)+4*a*c)) / 2*a -Math.pow(a,3)*c + Math.pow(b,-2);
 		}
-		//В случае попытки деления на ноль или вычисления корня из отрицательного числа выводим сообщение об ошибке
+		//Р’ СЃР»СѓС‡Р°Рµ РїРѕРїС‹С‚РєРё РґРµР»РµРЅРёСЏ РЅР° РЅРѕР»СЊ РёР»Рё РІС‹С‡РёСЃР»РµРЅРёСЏ РєРѕСЂРЅСЏ РёР· РѕС‚СЂРёС†Р°С‚РµР»СЊРЅРѕРіРѕ С‡РёСЃР»Р° РІС‹РІРѕРґРёРј СЃРѕРѕР±С‰РµРЅРёРµ РѕР± РѕС€РёР±РєРµ
 		catch(NullPointerException e)
 		{
 			throw new NullPointerException();
@@ -44,21 +44,21 @@ public class Task2
 	
 	public static void main(String[] args)
 	{
-		//Входные данные
+		//Р’С…РѕРґРЅС‹Рµ РґР°РЅРЅС‹Рµ
 		String aString, bString, cString;
 		double aDouble, bDouble, cDouble;
-		//Результат
+		//Р РµР·СѓР»СЊС‚Р°С‚
 		double result;
 		
-		//Условие задания
+		//РЈСЃР»РѕРІРёРµ Р·Р°РґР°РЅРёСЏ
 		System.out.println("Input three numerals \n"
 			+ "it'll show you result of expression \n");
 		
-		//Создание объекта класса
+		//РЎРѕР·РґР°РЅРёРµ РѕР±СЉРµРєС‚Р° РєР»Р°СЃСЃР°
 		Task2 Running = new Task2();
 		
-		//Выполнение программы
-		//Считывание чисел и проверка их валидности
+		//Р’С‹РїРѕР»РЅРµРЅРёРµ РїСЂРѕРіСЂР°РјРјС‹
+		//РЎС‡РёС‚С‹РІР°РЅРёРµ С‡РёСЃРµР» Рё РїСЂРѕРІРµСЂРєР° РёС… РІР°Р»РёРґРЅРѕСЃС‚Рё
 		try
 		{
 			aString=InputData.readString("Input a");
@@ -74,7 +74,7 @@ public class Task2
 			return;
 		}
 		
-		//Вычисление результата выражения и вывод его на экран
+		//Р’С‹С‡РёСЃР»РµРЅРёРµ СЂРµР·СѓР»СЊС‚Р°С‚Р° РІС‹СЂР°Р¶РµРЅРёСЏ Рё РІС‹РІРѕРґ РµРіРѕ РЅР° СЌРєСЂР°РЅ
 		result=Running.countExpression(aDouble,bDouble,cDouble);
 		System.out.println(result);
 	}

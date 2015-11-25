@@ -6,7 +6,7 @@ import by_1.InputData;
 public class Task4 
 {
 	
-	//Метод, проверяющий формат введенных значений и приводящий String к double
+	//РњРµС‚РѕРґ, РїСЂРѕРІРµСЂСЏСЋС‰РёР№ С„РѕСЂРјР°С‚ РІРІРµРґРµРЅРЅС‹С… Р·РЅР°С‡РµРЅРёР№ Рё РїСЂРёРІРѕРґСЏС‰РёР№ String Рє double
 	public  double validString (String someString) throws IncorrectNumberException
 	{
 		double stringToDouble=0;
@@ -14,7 +14,7 @@ public class Task4
 		{
 			stringToDouble=Double.parseDouble(someString);
 		}
-		//В случае неправильного формата вводимых данных выводим сообщение об ошибке
+		//Р’ СЃР»СѓС‡Р°Рµ РЅРµРїСЂР°РІРёР»СЊРЅРѕРіРѕ С„РѕСЂРјР°С‚Р° РІРІРѕРґРёРјС‹С… РґР°РЅРЅС‹С… РІС‹РІРѕРґРёРј СЃРѕРѕР±С‰РµРЅРёРµ РѕР± РѕС€РёР±РєРµ
 		catch (NumberFormatException e)
 		{
 			throw new IncorrectNumberException("Incorrect Format Of Numerals");
@@ -23,7 +23,7 @@ public class Task4
 	}
 		
 		
-	//Метод, определяющий вхождение точки в область
+	//РњРµС‚РѕРґ, РѕРїСЂРµРґРµР»СЏСЋС‰РёР№ РІС…РѕР¶РґРµРЅРёРµ С‚РѕС‡РєРё РІ РѕР±Р»Р°СЃС‚СЊ
 	public  String inArea (double x, double y)
 	{
 		String belongs = "false";
@@ -39,28 +39,28 @@ public class Task4
 	public static void main(String[] args) 
 	{
 		
-		//Входные данные
-		//первый катет
+		//Р’С…РѕРґРЅС‹Рµ РґР°РЅРЅС‹Рµ
+		//РїРµСЂРІС‹Р№ РєР°С‚РµС‚
 		String xString;
 		Double xDouble;
-		//второй катет
+		//РІС‚РѕСЂРѕР№ РєР°С‚РµС‚
 		String yString;
 		Double yDouble;
-		//результат выполнения
+		//СЂРµР·СѓР»СЊС‚Р°С‚ РІС‹РїРѕР»РЅРµРЅРёСЏ
 		String result;
 		
 		
-		//Условие задания
+		//РЈСЃР»РѕРІРёРµ Р·Р°РґР°РЅРёСЏ
 		System.out.println("Input point coordinates (x,y) \n"
 			+ "it'll show you if your point is in area \n");
 				
-		//Считывание чисел
+		//РЎС‡РёС‚С‹РІР°РЅРёРµ С‡РёСЃРµР»
 		xString=InputData.readString("Input x");
 		yString=InputData.readString("Input y");
 		
-		//Создание объекта класса
+		//РЎРѕР·РґР°РЅРёРµ РѕР±СЉРµРєС‚Р° РєР»Р°СЃСЃР°
 		Task4 Running = new Task4();
-		//Выполнение программы
+		//Р’С‹РїРѕР»РЅРµРЅРёРµ РїСЂРѕРіСЂР°РјРјС‹
 		try 
 		{
 			xDouble=Running.validString(xString);
@@ -71,7 +71,7 @@ public class Task4
 			System.out.println(e.getMessage());
 			return;
 		}
-		//Определение вхождения в фигуру и вывод на экран
+		//РћРїСЂРµРґРµР»РµРЅРёРµ РІС…РѕР¶РґРµРЅРёСЏ РІ С„РёРіСѓСЂСѓ Рё РІС‹РІРѕРґ РЅР° СЌРєСЂР°РЅ
 		result=Running.inArea(xDouble, yDouble);
 		System.out.println(result);
 	}

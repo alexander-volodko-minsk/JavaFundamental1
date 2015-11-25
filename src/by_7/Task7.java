@@ -8,11 +8,11 @@ import by_1.InputData;
 
 public class Task7 
 {
-	private String startPoint;//начальная точка
-	private String endPoint;//конечная точка
-	private String step;//шаг
+	private String startPoint;//РЅР°С‡Р°Р»СЊРЅР°СЏ С‚РѕС‡РєР°
+	private String endPoint;//РєРѕРЅРµС‡РЅР°СЏ С‚РѕС‡РєР°
+	private String step;//С€Р°Рі
 	
-	//Конструктор класса, в котором передаем параметры вычислений
+	//РљРѕРЅСЃС‚СЂСѓРєС‚РѕСЂ РєР»Р°СЃСЃР°, РІ РєРѕС‚РѕСЂРѕРј РїРµСЂРµРґР°РµРј РїР°СЂР°РјРµС‚СЂС‹ РІС‹С‡РёСЃР»РµРЅРёР№
 	public Task7 (String startPoint, String endPoint, String step)
 	{
 		this.startPoint=startPoint;
@@ -27,7 +27,7 @@ public class Task7
 		{
 			stringToDouble=Double.parseDouble(someString);
 		}
-		//В случае неправильного формата вводимых данных выводим сообщение об ошибке
+		//Р’ СЃР»СѓС‡Р°Рµ РЅРµРїСЂР°РІРёР»СЊРЅРѕРіРѕ С„РѕСЂРјР°С‚Р° РІРІРѕРґРёРјС‹С… РґР°РЅРЅС‹С… РІС‹РІРѕРґРёРј СЃРѕРѕР±С‰РµРЅРёРµ РѕР± РѕС€РёР±РєРµ
 		catch (NumberFormatException e)
 		{
 			throw new IncorrectNumberException("Incorrect Format Of Numerals");
@@ -35,7 +35,7 @@ public class Task7
 		return stringToDouble;
 	}
 	
-	//Метод, проверяющий валидность данных
+	//РњРµС‚РѕРґ, РїСЂРѕРІРµСЂСЏСЋС‰РёР№ РІР°Р»РёРґРЅРѕСЃС‚СЊ РґР°РЅРЅС‹С…
 	public  void validParameters (double a, double b, double h) throws IncorrectNumberException
 	{
 		if(a>=b | h>(b-a) | h<=0)
@@ -45,7 +45,7 @@ public class Task7
 	}	
 		
 		
-	//Метод, вычисляющий результат выражения и формирующий карту значений
+	//РњРµС‚РѕРґ, РІС‹С‡РёСЃР»СЏСЋС‰РёР№ СЂРµР·СѓР»СЊС‚Р°С‚ РІС‹СЂР°Р¶РµРЅРёСЏ Рё С„РѕСЂРјРёСЂСѓСЋС‰РёР№ РєР°СЂС‚Сѓ Р·РЅР°С‡РµРЅРёР№
 	public HashMap<String, String> countExpression (double a, double b, double h)
 	{
 		HashMap <String, String> results = new HashMap<String, String>();
@@ -60,10 +60,10 @@ public class Task7
 		return results;
 	}
 	
-	//Метод, выводящий карту на экран
+	//РњРµС‚РѕРґ, РІС‹РІРѕРґСЏС‰РёР№ РєР°СЂС‚Сѓ РЅР° СЌРєСЂР°РЅ
 	public void showHashMap (HashMap<String, String> hashMapToShow)
 	{
-		//Вывод на экран
+		//Р’С‹РІРѕРґ РЅР° СЌРєСЂР°РЅ
 		for (Entry<String, String> entry : hashMapToShow.entrySet())
 		{
 		    System.out.println(entry.getKey() + " | " + entry.getValue());
@@ -74,23 +74,23 @@ public class Task7
 	
 	public static void main(String[] args) 
 	{
-		//Входные данные
+		//Р’С…РѕРґРЅС‹Рµ РґР°РЅРЅС‹Рµ
 		String aString, bString, hString;
-		//Результат
+		//Р РµР·СѓР»СЊС‚Р°С‚
 		HashMap<String, String> results = new HashMap<String, String>(); 
 		
-		//Условие задания
+		//РЈСЃР»РѕРІРёРµ Р·Р°РґР°РЅРёСЏ
 		System.out.println("first point 'a', last point 'b' and step 'h' \n"
 			+ "it'll show you the results of expression \n");
 				
-		//Считывание чисел
+		//РЎС‡РёС‚С‹РІР°РЅРёРµ С‡РёСЃРµР»
 		aString=InputData.readString("Input a");		
 		bString=InputData.readString("Input b");
 		hString=InputData.readString("Input h");
 
-		//Создание объекта класса
+		//РЎРѕР·РґР°РЅРёРµ РѕР±СЉРµРєС‚Р° РєР»Р°СЃСЃР°
 		Task7 Running = new Task7(aString,bString,hString);
-		//Выполнение программы
+		//Р’С‹РїРѕР»РЅРµРЅРёРµ РїСЂРѕРіСЂР°РјРјС‹
 		double aDouble,bDouble,hDouble;
 		try 
 		{
@@ -103,7 +103,7 @@ public class Task7
 			System.out.println(e.getMessage());
 			return;
 		}
-        //Проверка валидности введенных значений
+        //РџСЂРѕРІРµСЂРєР° РІР°Р»РёРґРЅРѕСЃС‚Рё РІРІРµРґРµРЅРЅС‹С… Р·РЅР°С‡РµРЅРёР№
 		try
 		{
 			Running.validParameters(aDouble, bDouble, hDouble);
@@ -113,9 +113,9 @@ public class Task7
 			System.out.println(e.getMessage());
 			return;
 		}
-		//Вычисление результата
+		//Р’С‹С‡РёСЃР»РµРЅРёРµ СЂРµР·СѓР»СЊС‚Р°С‚Р°
 		results=Running.countExpression(aDouble, bDouble, hDouble);
-		//Вывод результата на экран
+		//Р’С‹РІРѕРґ СЂРµР·СѓР»СЊС‚Р°С‚Р° РЅР° СЌРєСЂР°РЅ
 		Running.showHashMap(results);
 	}
 

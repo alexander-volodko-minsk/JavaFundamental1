@@ -3,12 +3,12 @@ package by_1;
 public class Task1
 
 {
-	//Метод проверяющий формат введенных значений и преобразующий String в массив char
+	//РњРµС‚РѕРґ РїСЂРѕРІРµСЂСЏСЋС‰РёР№ С„РѕСЂРјР°С‚ РІРІРµРґРµРЅРЅС‹С… Р·РЅР°С‡РµРЅРёР№ Рё РїСЂРµРѕР±СЂР°Р·СѓСЋС‰РёР№ String РІ РјР°СЃСЃРёРІ char
 	public  char[] stringToCharArray (String someString, int validQuantity) throws IncorrectNumberException
 	{
 		char[] charArray = new char[someString.length()];
 		
-		//Проверка формата введеного числа
+		//РџСЂРѕРІРµСЂРєР° С„РѕСЂРјР°С‚Р° РІРІРµРґРµРЅРѕРіРѕ С‡РёСЃР»Р°
 		try 
 		{
 			Integer.parseInt(someString);
@@ -18,10 +18,10 @@ public class Task1
 			throw new IncorrectNumberException("Incorrect Format Of Numerals");
 		}
 		
-		//Разбивка числа на цифры и внесение их в массив
+		//Р Р°Р·Р±РёРІРєР° С‡РёСЃР»Р° РЅР° С†РёС„СЂС‹ Рё РІРЅРµСЃРµРЅРёРµ РёС… РІ РјР°СЃСЃРёРІ
 		charArray = someString.toCharArray();
 						
-		//Проверка количества введенных цифр
+		//РџСЂРѕРІРµСЂРєР° РєРѕР»РёС‡РµСЃС‚РІР° РІРІРµРґРµРЅРЅС‹С… С†РёС„СЂ
 		if(charArray.length!=validQuantity)
 		{
 			throw new IncorrectNumberException("Incorrect Quantity Of Numerals");
@@ -30,17 +30,17 @@ public class Task1
 	}
 	
 	
-	//Метод, проверяющий равенство сумм первых двух и последних двух цифр четырехзначного числа
+	//РњРµС‚РѕРґ, РїСЂРѕРІРµСЂСЏСЋС‰РёР№ СЂР°РІРµРЅСЃС‚РІРѕ СЃСѓРјРј РїРµСЂРІС‹С… РґРІСѓС… Рё РїРѕСЃР»РµРґРЅРёС… РґРІСѓС… С†РёС„СЂ С‡РµС‚С‹СЂРµС…Р·РЅР°С‡РЅРѕРіРѕ С‡РёСЃР»Р°
 	public String varification(char [] charArray)
 	{
-		//Выводимое сообщение
+		//Р’С‹РІРѕРґРёРјРѕРµ СЃРѕРѕР±С‰РµРЅРёРµ
 		String result="false";
 		
-		//Сравниваемые величины
-		int sumFirst=charArray[0]+charArray[1];//сумма первых двух чисел
-		int sumSecond=charArray[2]+charArray[3];//сумма вторых двух чисел
+		//РЎСЂР°РІРЅРёРІР°РµРјС‹Рµ РІРµР»РёС‡РёРЅС‹
+		int sumFirst=charArray[0]+charArray[1];//СЃСѓРјРјР° РїРµСЂРІС‹С… РґРІСѓС… С‡РёСЃРµР»
+		int sumSecond=charArray[2]+charArray[3];//СЃСѓРјРјР° РІС‚РѕСЂС‹С… РґРІСѓС… С‡РёСЃРµР»
 
-	    //Проверка равенства
+	    //РџСЂРѕРІРµСЂРєР° СЂР°РІРµРЅСЃС‚РІР°
 	    if(sumFirst==sumSecond)
 		{
 			result="true";
@@ -52,25 +52,25 @@ public class Task1
 	public static void main(String[] args)
 	
 	{
-		//Входные данные
+		//Р’С…РѕРґРЅС‹Рµ РґР°РЅРЅС‹Рµ
 		String numberForVarification;
-		int validNumber=4;// количество цифр
+		int validNumber=4;// РєРѕР»РёС‡РµСЃС‚РІРѕ С†РёС„СЂ
 		char [] numberInCharArray;
-		//Результат
+		//Р РµР·СѓР»СЊС‚Р°С‚
 		String result;
 		
-		//Условие работы
+		//РЈСЃР»РѕРІРёРµ СЂР°Р±РѕС‚С‹
 		System.out.println("Number must consist of four numerals and in the result \n"
 				+ "it'll show you if the sum of the first two \n"
 				+ "numbers is equal to the sum of the last two \n");
 		
-		//Считывание числа
+		//РЎС‡РёС‚С‹РІР°РЅРёРµ С‡РёСЃР»Р°
 		numberForVarification=InputData.readString("Input your number");
 		
-		//Создание объекта класса
+		//РЎРѕР·РґР°РЅРёРµ РѕР±СЉРµРєС‚Р° РєР»Р°СЃСЃР°
 		Task1 Running = new Task1();
 		
-		//Выполнение программы
+		//Р’С‹РїРѕР»РЅРµРЅРёРµ РїСЂРѕРіСЂР°РјРјС‹
 		try 
 		{
 			numberInCharArray=Running.stringToCharArray(numberForVarification, validNumber);
@@ -80,7 +80,7 @@ public class Task1
 			System.out.println(e.getMessage());
 			return;
 		}
-		//Получение и вывод результата на экран
+		//РџРѕР»СѓС‡РµРЅРёРµ Рё РІС‹РІРѕРґ СЂРµР·СѓР»СЊС‚Р°С‚Р° РЅР° СЌРєСЂР°РЅ
 		result=Running.varification(numberInCharArray);
 		System.out.println(result);	
 	}
