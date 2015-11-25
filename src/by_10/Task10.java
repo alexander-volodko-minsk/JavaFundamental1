@@ -71,6 +71,27 @@ public class Task10
 		return matrix;
 	}
 	
+	//Метод, выводящий матрицу на экран
+	public void showMatrix(int[][] matrixToShow, int verticalSize, int horizontalSize )
+	{
+        // Цикл по первой размерности (первые квадратные скобки)
+        for (int i = 0; i < verticalSize; i++)
+        {
+        	// Цикл по второй размерности (вторые квадратные скобки)
+            for (int j = 0; j < horizontalSize; j++)
+            {
+            	if(j==horizontalSize-1)
+            	{
+            		 System.out.println(matrixToShow[i][j]);
+            	}
+            	else
+            	{
+            		System.out.print(matrixToShow[i][j]);
+            	}
+                
+            }
+        }
+	}
 
 	public static void main(String[] args) 
 	{
@@ -99,6 +120,8 @@ public class Task10
 			System.out.println(e.getMessage());
 			return;
 		}
+		
 		matrix=Running.formingMatrix(dimensionInt, dimensionInt);
+		Running.showMatrix(matrix, dimensionInt, dimensionInt);
 	}
 }
