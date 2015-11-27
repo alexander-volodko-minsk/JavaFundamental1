@@ -22,34 +22,21 @@ public class Task4
 		return stringToDouble;
 	}
 		
-		
-	//Метод, определяющий вхождение точки в область
-	public  String inArea (double x, double y)
-	{
-		String belongs = "false";
-		
-		if((y>=-3 & y<=0 & x>=-4 & x<=4)|(y>0 & y<=4 & x>=-2 & x<=2))
-		{
-			belongs = "true";
-		}
-		return belongs;
-	}
-
 	
 	public static void main(String[] args) 
 	{
 		
 		//Входные данные
-		//первый катет
+		double x1Min=-2, x1Max=2, y1Min=0, y1Max=4;
+		double x2Min=-4, x2Max=4, y2Min=-3, y2Max=0;
+		
+		//координата x
 		String xString;
-		Double xDouble;
-		//второй катет
+		double xDouble;
+		//координата y
 		String yString;
-		Double yDouble;
-		//результат выполнения
-		String result;
-		
-		
+		double yDouble;
+
 		//Условие задания
 		System.out.println("Input point coordinates (x,y) \n"
 			+ "it'll show you if your point is in area \n");
@@ -71,9 +58,20 @@ public class Task4
 			System.out.println(e.getMessage());
 			return;
 		}
+		
+		//Создание прямоугольников
+		Rectangle First = new Rectangle(x1Min ,x1Max ,y1Min ,y1Max);
+		Rectangle Second = new Rectangle(x2Min ,x2Max ,y2Min ,y2Max);
+		
 		//Определение вхождения в фигуру и вывод на экран
-		result=Running.inArea(xDouble, yDouble);
-		System.out.println(result);
+		if(First.contains(xDouble, yDouble)==true | Second.contains(xDouble, yDouble)==true)
+		{
+			System.out.println("true");
+		}
+		else
+		{
+			System.out.println("false");
+		}
 	}
 
 }
