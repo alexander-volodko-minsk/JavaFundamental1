@@ -51,21 +51,17 @@ public class Task10
         // Цикл по первой размерности (первые квадратные скобки)
         for (int i = 0; i < verticalSize; i++)
         {
+        	for (int j = 0; j < horizontalSize; j++)
+        		
         	if(i%2!=0)//нечетность
         	{
-        		// Цикл по второй размерности (вторые квадратные скобки)
-                for (int j = 0; j < horizontalSize; j++)
                 {
                 	matrix[i][j] = horizontalSize-j;
                 }
         	}
         	else
         	{
-        		// Цикл по второй размерности (вторые квадратные скобки)
-                for (int j = horizontalSize-1; j > (0-1); j--)
-                {
                 	matrix[i][j] = j+1;
-                }
         	}
         }
 		return matrix;
@@ -82,11 +78,11 @@ public class Task10
             {
             	if(j==horizontalSize-1)
             	{
-            		 System.out.println(matrixToShow[i][j]);
+            		 System.out.println(matrixToShow[i][j]+"|");
             	}
             	else
             	{
-            		System.out.print(matrixToShow[i][j]);
+            		System.out.print(matrixToShow[i][j]+"|");
             	}
                 
             }

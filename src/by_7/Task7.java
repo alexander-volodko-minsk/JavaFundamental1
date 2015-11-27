@@ -20,6 +20,7 @@ public class Task7
 		this.step=step;
 	}
 	
+	//Метод, проверяющий формат введенных значений и приводящий String к double
 	public  double validString (String someString) throws IncorrectNumberException
 	{
 		double stringToDouble=0;
@@ -52,9 +53,14 @@ public class Task7
 		double f;
 		for(double x=a; x<=b; x=x+h)
 		{
-			f=Math.pow(Math.sin(x), 2)-Math.cos(2*x);
+			double expression1 = Math.pow(Math.sin(x), 2);
+			double expression2 = Math.cos(2*x);
+			//Вычисление значения функции
+			f=expression1-expression2;
+			//Перевод в String
 			String fString = new Double(f).toString();
 			String xString = new Double(x).toString();
+			//Добавление в Map
 			results.put(xString, fString);
 		}
 		return results;

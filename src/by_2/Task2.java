@@ -28,7 +28,12 @@ public class Task2
 		//Вычисление результата по заданной формуле
 		try 
 		{
-		    result = (b + Math.sqrt(Math.pow(b,2)+4*a*c)) / 2*a -Math.pow(a,3)*c + Math.pow(b,-2);
+			double expression1=(b + Math.sqrt(Math.pow(b,2)+4*a*c));
+			double expression2=2*a;
+			double expression3=Math.pow(a,3)*c;
+			double expression4=Math.pow(b,-2);
+					
+		    result = expression1 / expression2 -expression3 +expression4;
 		}
 		//В случае попытки деления на ноль или вычисления корня из отрицательного числа выводим сообщение об ошибке
 		catch(NullPointerException e)
